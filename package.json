@@ -1,0 +1,28 @@
+{
+  "name": "srp-shim",
+  "description": "Secure Remote Password (SRP): modified to enable a browser-based client",
+  "version": "0.2.0",
+
+  "main": "index.js",
+
+  "scripts": {
+    "test": "vows test/test*.js --spec"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cafjs/node-srp.git"
+  },
+
+  "author": "original author Brian Warner <warner-node-srp@lothar.com>, modified by antlai@cafjs.com",
+  "licence": "MIT",
+  "readmeFilename": "README.md",
+
+  "dependencies": {
+    "jsbn": "^0.0.0"
+  },
+
+  "devDependencies": {
+    "vows": "0.7.0"
+  }
+}
