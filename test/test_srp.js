@@ -7,6 +7,8 @@ var vows = require('vows'),
       identity = new Buffer("alice"),
       password = new Buffer("password123");
 
+var  BigInteger = require('jsbn');
+
 assert(params, "missing parameters");
 
 var client, server;
@@ -126,7 +128,7 @@ vows.describe("srp.js")
       var Azero = new Buffer(params.N_length_bits/8);
       Azero.fill(0);
       var AN = bigUtils.toBuffer(params.N);
-      var AN1 = bigUtils.toBuffer(params.N.add(1));
+      var AN1 = bigUtils.toBuffer(params.N.add(new BigInteger('1')));
 
       assert.throws(function() {server2.setA(Azero);},
                     /invalid client-supplied 'A'/);
@@ -142,7 +144,7 @@ vows.describe("srp.js")
       var Bzero = new Buffer(params.N_length_bits/8);
       Bzero.fill(0, 0, params.N_length_bits/8);
       var BN = bigUtils.toBuffer(params.N);
-      var BN1 = bigUtils.toBuffer(params.N.add(1));
+      var BN1 = bigUtils.toBuffer(params.N.add(new BigInteger('1')));
       assert.throws(function() {client2.setB(Bzero);},
                     /invalid server-supplied 'B'/);
       assert.throws(function() {client2.setB(BN);},
