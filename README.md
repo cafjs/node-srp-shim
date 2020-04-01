@@ -7,7 +7,7 @@ System](http://tools.ietf.org/html/rfc2945) and protocols in [Secure
 Remote Password (SRP) Protocol for TLS
 Authentication](http://tools.ietf.org/html/rfc5054)
 
-SRP is an interactive protocol which allows a server to confirm that some client knows a password, and to derive a strong shared session key, without revealing what the password is to an eavesdropper. In addition, the server does not hold the actual password: instead it stores a "verifier" created by the client. If the server's private data is revealed (by a server compromise), the verifier cannot be used directly to impersonate the client.
+SRP is an interactive protocol which allows a server to confirm that some client knows a password, and to derive a strong shared session key, without revealing what the password is to an eavesdropper. In addition, the server does not hold the actual password in plaintext, i.e., it stores a "verifier" created by the client. If the server's private data is revealed (by a server compromise), the verifier cannot be used directly to impersonate the client.
 
 This module provides both client and server implementations of SRP-6a for node.js. They are interoperable with [Mozilla Identity-Attached Services](https://wiki.mozilla.org/Identity/AttachedServices/KeyServerProtocol)
 
